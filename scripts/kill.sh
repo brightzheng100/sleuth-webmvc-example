@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-pkill -9 -f sleuth.webmvc.Frontend
-pkill -9 -f sleuth.webmvc.Backend
+[[ -z "${ROOT}" ]] && ROOT=`pwd`
+
+docker-compose -f "${ROOT}/docker/docker-compose.yml" kill
